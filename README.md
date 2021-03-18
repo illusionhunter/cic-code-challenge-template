@@ -23,13 +23,7 @@ If you have read the rule of Texas Hold'em (**please do**), you will understand 
 
 In this scenario, there are five community cards and two hands cards, and the player decides to select three out of the five community cards that will, in combination with the cards the player has on hand, make that **hand** a **straight flush**. 
 
-Of course, this will be quite complex for you to solve in a limited timespan. Therefore, we simplified the requirements further. You are only expected to nominate the largest possible **hand** from five cards. 
-
-<img width="179" alt="image" src="https://user-images.githubusercontent.com/7297840/111102008-07ecbf80-8586-11eb-9cba-b88bd2e3e368.png">
-
-For instance, in this scenario, there is obviously a pair of **Ace** in these five cards, which makes this hand qualify as a **Pair**. However, as it also qualifies as a **Full House**, and **Full House** has higher hand points in comparison to a **Pair**, this makes this a **Full House**. 
-
-In sum, we expect you will be able to build a **hand judge** that can tell us what the highest possible hand is among these five cards.
+In sum, we expect you will be able to build a **hand judge** that can tell us what the highest possible hand is among these seven cards.
 
 ## What has been provided
 
@@ -42,13 +36,15 @@ List<Card> cards = Arrays.asList(
         new Card(Card.Kind.FOUR, Card.Suit.HEARTS),
         new Card(Card.Kind.SEVEN, Card.Suit.DIAMONDS),
         new Card(Card.Kind.KING, Card.Suit.CLUBS),
-        new Card(Card.Kind.TWO, Card.Suit.SPADES)
+        new Card(Card.Kind.TWO, Card.Suit.SPADES),
+        new Card(Card.Kind.ACE, Card.Suit.HEARTS),
+        new Card(Card.Kind.EIGHT, Card.Suit.CLUBS)
 );
 game.add(cards);
 assertEquals(Hand.HIGHCARD, game.showHand());
 ```
 
-As you can see, we create a game, populate five cards to the deck, and when we call `game.showHand()`, the function should return a `Hand` that corresponds to the highest possible hand out from these five cards. 
+As you can see, we create a game, populate seven cards to the deck, and when we call `game.showHand()`, the function should return a `Hand` that corresponds to the highest possible hand out from these seven cards. 
 
 There is also a `GameTest` in the test folder provided for you, and hopefully it can give you some hints as of what we expect from the solution you provide. 
 
@@ -68,9 +64,9 @@ Name: ${YOUR_NAME_HERE_PLEASE}
 
 ## Caveats
 
-1. Please aim to finish this test within a day. We will take the time you spend doing this test into consideration towards if you will progress into next stages.
-2. If you aren't able to pass all tests in the time window, aim to pass as many as possible. 
-3. We will review your solution. Submit meaningful and generic solutions, not solutions solely for passing all tests.  
+1. Submission with failed test cases is ignored. Exceeding time limit without successful submission means failure.
+2. Submission with all tests passed will be reviewed, cheating would cause disqualification.
+3. Faster and successful submission gets higher score   
 4. You should click that green `Use this template` at the top right portion of the page. Fork this repository under your own GitHub profile, and start from there.
 > :warning: **Make sure that the repository you fork is **PRIVATE**.** 
-5. Have fun!
+4. Have fun!
